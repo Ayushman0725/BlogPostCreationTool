@@ -55,17 +55,17 @@ def save_blog_to_file(title, content):
     with open(filename, "w", encoding="utf-8") as f:
         f.write(f"Title: {title}\n\n")
         f.write(content)
-    print(f"✅ Blog saved as: {filename}")
+    print(f" Blog saved as: {filename}")
 
 
 def main():
     products = scrape_amazon_best_sellers()
     for product in products:
-        print(f"\n🔍 Product: {product}")
+        print(f"\n Product: {product}")
         keywords = get_seo_keywords(product)
-        print(f"📈 Keywords: {keywords}")
+        print(f" Keywords: {keywords}")
         blog_content = generate_blog(product, keywords)
-        print(f"✍️ Blog content generated.\n")
+        print(f" Blog content generated.\n")
         save_blog_to_file(product, blog_content)
 
 if __name__ == "__main__":
